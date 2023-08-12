@@ -28,7 +28,6 @@ export default function ListTransfer() {
                     <TableBody>
                         {data &&
                             data.transactions.map((item, index) => {
-                                console.log(item);
                                 let date = fromUnixTime(item.block.timestamp);
                                 let date_str = date.toLocaleString("en-US", { month: "long" }) + " " + date.getDay() + ", " + date.getFullYear();
                                 return (
