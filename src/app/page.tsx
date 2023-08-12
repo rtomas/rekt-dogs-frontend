@@ -8,17 +8,18 @@ import { useDataSubgraph, useMonthlyStatsSubgraph } from "@/hooks/useDataSubgrap
 export default function Cards() {
     const { data, error } = useDataSubgraph();
 
-    let loadingGeneral = true;
+    let loading = true;
     let totalAccountsEver = 0,
         totalOwners = 0,
         numTokens = 0,
         percent = 0;
     if (data && data.dogsInfos[0]) {
-        loadingGeneral = false;
+        loading = false;
         totalAccountsEver = data.dogsInfos[0].numAccounts;
         totalOwners = data.dogsInfos[0].numOwners;
         numTokens = data.dogsInfos[0].numTokens;
 
+        // calculate percent for the bar
         percent = (totalOwners * 100) / totalAccountsEver;
     }
     return (
@@ -33,8 +34,12 @@ export default function Cards() {
                 <TabPanels>
                     <TabPanel>
                         <Grid numItemsMd={2} numItemsLg={3} className="gap-6 mt-6">
-                            {loadingGeneral && <>Loading...</>}
-                            {!loadingGeneral && (
+                            {loading && (
+                                <Card className="max-w-sm">
+                                    <Text>Loading... </Text>
+                                </Card>
+                            )}
+                            {!loading && (
                                 <>
                                     <Card className="max-w-sm">
                                         <Text>NFT Owners</Text>

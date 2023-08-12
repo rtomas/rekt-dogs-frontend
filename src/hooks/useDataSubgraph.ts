@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 
+// interfaces for the data received from the subgraph
 interface ResponseGeneral {
     dogsInfos: { numTokens: number; numOwners: number; numAccounts: number }[];
 }
@@ -13,6 +14,7 @@ interface TransferList {
     transactions: { from: { address: string }; to: { address: string }; block: { timestamp: number; number: number } }[];
 }
 
+// queries to the subgraph
 const GENERAL_STATS_QUERY = gql`
     query {
         dogsInfos(first: 1) {

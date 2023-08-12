@@ -4,6 +4,7 @@ import { useListTransfer } from "@/hooks";
 import { Title, Flex, Table, TableBody, TableCell, BadgeDelta, TableRow, TableHeaderCell, TableHead } from "@tremor/react";
 import { fromUnixTime } from "date-fns";
 
+/// create the list of transfers
 export default function ListTransfer() {
     const { data, error } = useListTransfer();
     let loading = true;
@@ -28,6 +29,7 @@ export default function ListTransfer() {
                     <TableBody>
                         {data &&
                             data.transactions.map((item, index) => {
+                                // unix to date format
                                 let date = fromUnixTime(item.block.timestamp);
                                 let date_str = date.toLocaleString("en-US", { month: "long" }) + " " + date.getDay() + ", " + date.getFullYear();
                                 return (
