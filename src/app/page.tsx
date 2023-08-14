@@ -24,7 +24,7 @@ export default function Cards() {
     }
     return (
         <main className="px-12 py-12">
-            <Title>Dokt Dogs NFT Collection | Dashboard</Title>
+            <Title>Rekt Dogs NFT Collection | Dashboard</Title>
             <Text>Stats abouts all the transfers in the protocol</Text>
             <TabGroup className="mt-6">
                 <TabList>
