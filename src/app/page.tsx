@@ -45,7 +45,7 @@ export default function Cards() {
                                         <Text>NFT Owners</Text>
                                         <Metric>{totalOwners}</Metric>
                                         <Flex className="mt-4">
-                                            <Text>{percent.toFixed(1)}% of total</Text>
+                                            <Text>{percent.toFixed(1)}% over the maximum during the entire project</Text>
                                         </Flex>
                                         <ProgressBar value={Math.floor(percent)} className="mt-2" />
                                     </Card>
