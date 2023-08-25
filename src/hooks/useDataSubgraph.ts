@@ -29,8 +29,8 @@ const MONTHLY_STATS_QUERY = gql`
     query {
         monthlySnapshots(orderDirection: asc, orderBy: id) {
             id
-            monthlyTransfersCount
             numOwners
+            monthlyTransfersCount
         }
     }
 `;
