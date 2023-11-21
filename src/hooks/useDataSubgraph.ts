@@ -17,7 +17,7 @@ interface TransferList {
 // queries to the subgraph
 const GENERAL_STATS_QUERY = gql`
     query {
-        dogsInfos(first: 1) {
+        dogsInfos(first: 1)  {
             numTokens
             numOwners
             numAccounts
@@ -27,7 +27,7 @@ const GENERAL_STATS_QUERY = gql`
 
 const MONTHLY_STATS_QUERY = gql`
     query {
-        monthlySnapshots(orderDirection: asc, orderBy: id) {
+        monthlySnapshots(orderDirection: asc, orderBy: id)  {
             id
             numOwners
             monthlyTransfersCount
@@ -36,7 +36,7 @@ const MONTHLY_STATS_QUERY = gql`
 `;
 
 const TRANSFER_QUERY = gql`
-    query Transfers($first: Int!, $skip: Int!) {
+    query Transfers($first: Int!, $skip: Int!)  {
         transactions(first: $first, skip: $skip, orderBy: block__timestamp, orderDirection: desc) {
             to {
                 address
